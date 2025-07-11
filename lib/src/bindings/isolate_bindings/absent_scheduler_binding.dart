@@ -85,10 +85,18 @@ mixin _AbsentSchedulerBinding on BindingBase implements SchedulerBinding {
   @override
   void scheduleFrame() {}
 
-  @override
-  int scheduleFrameCallback(FrameCallback callback, {required bool rescheduling}) {
-    throw UnimplementedError();
-  }
+@override
+int scheduleFrameCallback(
+  FrameCallback callback, {
+  bool rescheduling = false,
+  bool flowId = false,
+}) {
+  return SchedulerBinding.instance.scheduleFrameCallback(
+    callback,
+    rescheduling: rescheduling,
+    flowId: flowId,
+  );
+}
 
   @override
   Future<T> scheduleTask<T>(
