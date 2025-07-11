@@ -1,6 +1,8 @@
 // ignore_for_file: no-empty-block
 // ignore_for_file: prefer-match-file-name
 // coverage:ignore-file
+import 'package:flutter/scheduler.dart';
+
 part of 'isolate_binding.dart';
 
 mixin _AbsentSchedulerBinding on BindingBase implements SchedulerBinding {
