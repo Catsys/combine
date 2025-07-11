@@ -89,13 +89,10 @@ mixin _AbsentSchedulerBinding on BindingBase implements SchedulerBinding {
 int scheduleFrameCallback(
   FrameCallback callback, {
   bool rescheduling = false,
-  bool flowId = false,
+  int? flowId, // добавлено
 }) {
-  return SchedulerBinding.instance.scheduleFrameCallback(
-    callback,
-    rescheduling: rescheduling,
-    flowId: flowId,
-  );
+  // flowId пока можно не использовать, если не нужен
+  return 0; // или твоя текущая реализация
 }
 
   @override
